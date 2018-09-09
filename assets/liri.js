@@ -1,7 +1,10 @@
 require('dotenv').config();
-var BANDS = require("./bands-in-town.js");
 
+var BANDS = require("./bands-in-town.js");
 var bands = new BANDS();
+
+var OMDB = require("./OMDB.js");
+var movies = new OMDB();
 
 //var spotify = new SPOTIFY(keys.spotify);
 
@@ -16,9 +19,12 @@ if (!search) {
 if (!term) {
     term = "Tool";
 }
+
 if (search === "concert-this") {
     console.log("Searching for shows");
     bands.findBands(term);
-  } else {
-    console.log("No show for you");
-  }
+}
+if (search === "movie-this") {
+    console.log("Searching for movies");
+    movies.findMovies(term);
+} 
