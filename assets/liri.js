@@ -6,18 +6,19 @@ var bands = new BANDS();
 var OMDB = require("./OMDB.js");
 var movies = new OMDB();
 
-//var spotify = new SPOTIFY(keys.spotify);
+var Spotify = require("./keys.js");
+var spotify = new Spotify(keys.spotify);
 
 var search = process.argv[2];
 
 var term = process.argv.slice(3).join(" ");
 
 if (!search) {
-    search = "band";
+    search = "spotify-this-song";
 }
 
 if (!term) {
-    term = "Tool";
+    term = "Ace of base";
 }
 
 if (search === "concert-this") {
@@ -27,4 +28,8 @@ if (search === "concert-this") {
 if (search === "movie-this") {
     console.log("Searching for movies");
     movies.findMovies(term);
-} 
+}
+if (search === "spotify-this-song") {
+    console.log("Searching for movies");
+    spotify.findSong(term);
+}
