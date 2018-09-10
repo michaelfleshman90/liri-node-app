@@ -31,7 +31,7 @@ var spotify = function() {
         });
       };
 }
-module.exports = SPOTIFY;
+module.exports = spotify;
 //I need to get the spotify keys working to see the json data to finish the info for print screen
 //also need to get the random.txt going.
 //all my files append

@@ -6,7 +6,8 @@ var bands = new BANDS();
 var OMDB = require("./OMDB.js");
 var movies = new OMDB();
 
-var Spotify = require("./keys.js");
+var keys = require("./keys.js");
+var Spotify = require("./spotify.js");
 var spotify = new Spotify(keys.spotify);
 
 var search = process.argv[2];
