@@ -1,4 +1,5 @@
-require('dotenv').config();
+
+var fs = require("fs");
 
 var BANDS = require("./bands-in-town.js");
 var bands = new BANDS();
@@ -33,4 +34,8 @@ if (search === "movie-this") {
 if (search === "spotify-this-song") {
     console.log("Searching for movies");
     spotify.findSong(term);
+}
+if (search === "i want it that way") {
+    console.log("You asked for it!");
+    
 }
